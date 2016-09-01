@@ -1,0 +1,41 @@
+#
+# Template to generate a project using a Python library.
+#
+@tag "python"
+@tag "python2"
+@tag "python3"
+@description "Creates a new Python library project"
+@generator "Python Library"
+editor NewPythonLibraryProject
+
+uses atomist.common-editors.UpdateReadme
+uses SetProjectReadme
+
+
+@maxLength 21
+@description "Name your library following PEP8 conventions."
+@displayName "Library name"
+param project_name: @project_name
+
+@default "0.0.1"
+@displayName "Semantic Version"
+@optional
+@description "A Semantic Version number of the form: MAJOR.MINOR.PATCH following guidelines at http://semver.org/"
+@validInput "MAJOR.MINOR.PATCH"
+param version: @semantic_version
+
+@default "My new project"
+@optional
+@description "Describe your library in a few words."
+@displayName "description"
+@validInput "Free Text"
+param description: .*
+
+with project p
+   do replaceInPath "python_lib" project_name
+
+with file f when { f.name().endsWith(".py") }
+   do replace "python_lib" project_name
+
+
+SetProjectReadme

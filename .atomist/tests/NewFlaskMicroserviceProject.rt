@@ -1,0 +1,20 @@
+scenario New project should pass smoke test
+
+let project_name = "my_super_lib"
+let version = "0.0.1"
+let init_path = "my_super_lib/__init__.py"
+
+let readme_path = "README.md"
+let description = "And now for something completely different"
+
+given
+  ArchiveRoot
+
+when
+NewPythonLibraryProject
+
+then
+  fileExists { project_name + "/__init__.py" }
+  and fileContains init_path version
+  and fileContains readme_path project_name
+  and fileContains readme_path description
