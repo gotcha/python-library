@@ -1,0 +1,22 @@
+
+@description "Set the CHANGELOG of a Python library project."
+editor AddChangeLog
+
+@description "Name of the new project"
+@displayName "Name"
+param project_name: @project_name
+
+@default "0.0.1"
+@displayName "Semantic Version"
+@optional
+@description "A Semantic Version number of the form: MAJOR.MINOR.PATCH following guidelines at http://semver.org/"
+@validInput "MAJOR.MINOR.PATCH"
+param version: @semantic_version
+
+let template = "CHANGELOG.mustache"
+
+with project p
+	do merge template to "CHANGELOG"
+
+with file f when f.name = "CHANGELOG"
+	do replace "{{creation_date}}" { new Date().toISOString().split('T')[0] }

@@ -1,5 +1,7 @@
 # {{project_name}}
 
+## Overview
+
 {{description}}
 
 ## Setting up the environment
@@ -17,10 +19,34 @@ the library as follows:
 $ pip install -r requirements.txt
 ```
 
-## Getting started
+## Develop on the project
+
+### Run tests
 
 You can execute the library's tests as follows:
 
 ```
 $ pytest tests
 ```
+
+### Check code-style
+
+This library does its best to follow [PEP 8]() code style conventions. They can
+be checked by running the following command:
+
+```
+$ pycodestyle {{project_name}}
+```
+
+### Build the documentation
+
+The documentation is written using the [Sphinx]() framework and can be built
+as follows:
+
+```
+$ cd docs
+$ make html
+```
+
+The generated output will be located into the `build` subdirectory.
+

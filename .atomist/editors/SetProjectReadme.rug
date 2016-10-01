@@ -1,6 +1,6 @@
 
 @description "Set the README of a Python library project."
-editorSetProjectReadme
+editor SetProjectReadme
 
 @description "Name of the new project"
 @displayName "Name"

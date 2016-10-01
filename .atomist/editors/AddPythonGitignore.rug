@@ -1,0 +1,8 @@
+
+@description "Add a Python oriented .gitignore to the project"
+editor AddPythonGitignore
+
+let gitignore = "Python.gitignore.mustache"
+
+with project p
+	do merge gitignore to ".gitignore"

@@ -8,9 +8,10 @@
 @generator "Python Library"
 editor NewPythonLibraryProject
 
-uses atomist.common-editors.UpdateReadme
 uses SetProjectReadme
-
+uses AddChangeLog
+uses UpdateDocs
+uses AddPythonGitignore
 
 @maxLength 21
 @description "Name your library following PEP8 conventions."
@@ -32,10 +33,19 @@ param version: @semantic_version
 param description: .*
 
 with project p
+begin
    do replaceInPath "python_lib" project_name
+end
 
-with file f when { f.name().endsWith(".py") }
+with file f when f.name.endsWith ".py"
+begin
    do replace "python_lib" project_name
+   do replace "0.0.1" version
+   do replace "My library" description
+end
 
 
 SetProjectReadme
+AddChangeLog
+UpdateDocs
+AddPythonGitignore
