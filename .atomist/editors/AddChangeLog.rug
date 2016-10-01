@@ -14,9 +14,7 @@ param project_name: @project_name
 param version: @semantic_version
 
 let template = "CHANGELOG.mustache"
+let creation_date = { new Date().toISOString().split('T')[0] }
 
 with project p
 	do merge template to "CHANGELOG"
-
-with file f when f.name = "CHANGELOG"
-	do replace "{{creation_date}}" { new Date().toISOString().split('T')[0] }
