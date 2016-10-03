@@ -12,4 +12,4 @@ Once the project is generated in your GitHub organisation/account, simply
 checkout the newly generated project and follow its README to get started.
 
 ---
-Created by Atomist. Need Help? [Join our Slack team](https://join.atomist.com/
+Created by Atomist. Need Help? [Join our Slack team](https://join.atomist.com/)
