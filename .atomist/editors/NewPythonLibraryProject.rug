@@ -18,7 +18,7 @@ uses AddPythonGitignore
 @displayName "Library name"
 param project_name: @project_name
 
-@default "0.0.1"
+@default "0.1.0"
 @displayName "Semantic Version"
 @optional
 @description "A Semantic Version number of the form: MAJOR.MINOR.PATCH following guidelines at http://semver.org/"
