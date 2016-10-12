@@ -1,0 +1,9 @@
+@tag "travis"
+@tag "python"
+@description "Set the travis description file in your Python project"
+editor AddTravisCI
+
+let template = "travisci.yml.mustache"
+
+with project p
+	do merge template to ".travis.yml"
