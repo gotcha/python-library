@@ -1,4 +1,4 @@
-
+@tag "python"
 @description "Add a Python oriented .gitignore to the project"
 editor AddPythonGitignore
 

@@ -1,4 +1,4 @@
-@tag "travis"
+@tag "travis-ci"
 @tag "python"
 @description "Set the travis description file in your Python project"
 editor AddTravisCI

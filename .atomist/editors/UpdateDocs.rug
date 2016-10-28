@@ -1,4 +1,4 @@
-
+@tag "python"
 @description "Updates Sphinx documentation of a Python project."
 editor UpdateDocs
 

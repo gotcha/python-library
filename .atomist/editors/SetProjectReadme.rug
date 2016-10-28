@@ -1,4 +1,4 @@
-
+@tag "python"
 @description "Set the README of a Python library project."
 editor SetProjectReadme
 
